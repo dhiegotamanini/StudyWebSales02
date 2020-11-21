@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SalesWeb02.Data;
+using SalesWeb02.Services;
 
 namespace SalesWeb02
 {
@@ -40,6 +41,7 @@ namespace SalesWeb02
                     options.UseMySql(Configuration.GetConnectionString("SalesWeb02Context") , builder => builder.MigrationsAssembly("SalesWeb02")  ));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         
         }
 
