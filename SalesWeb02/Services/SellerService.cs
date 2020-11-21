@@ -27,5 +27,16 @@ namespace SalesWeb02.Services
             _context.SaveChanges();
         }
 
+        public Seller Find(int id)
+        {
+            return _context.Seller.Where(c => c.ID == id).SingleOrDefault();
+        }
+
+        public void Remove(int id)
+        {
+            _context.Remove(Find(id));
+            _context.SaveChanges();
+        }
+
     }
 }

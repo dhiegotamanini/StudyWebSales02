@@ -42,6 +42,7 @@ namespace SalesWeb02
 
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         
         }
 
